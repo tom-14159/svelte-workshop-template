@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  svelte-workshop-app:
+    build:
+      context: .
+    command: 
+      - /bin/sh
+      - -c
+      - yarn install; yarn run vite --host
+    user: 1000:1000
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/opt/svelte-workshop-app
